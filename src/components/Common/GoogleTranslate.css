@@ -1,0 +1,19 @@
+/* Base styling for the translate container */
+.translate-container {
+    margin: 0 auto;
+  }
+  
+  /* For mobile view (width less than 768px) */
+  @media (max-width: 768px) {
+    .translate-container {
+      width: 10px;
+    }
+  }
+  
+  /* For laptop/desktop view (width 768px or more) */
+  @media (min-width: 768px) {
+    .translate-container {
+      width: 100px;
+    }
+  }
+  
