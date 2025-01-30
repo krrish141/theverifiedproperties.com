@@ -12,6 +12,35 @@ const Properties_detail = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [currentIndex, setCurrentIndex] = useState(0); // Track the index of the current image
+
+    const openModal = (image, index) => {
+        setSelectedImage(image);
+        setCurrentIndex(index); // Set the index of the clicked image
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+        document.body.style.overflow = "auto"; // Re-enable scrolling
+    };
+
+    const goToNextImage = (e) => {
+        e.stopPropagation(); // Prevent event propagation to the modal
+        if (property.AllImagePaths && property.AllImagePaths.length > 0) {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % property.AllImagePaths.length); // Loop to first image if we reach the end
+        }
+    };
+
+    const goToPrevImage = (e) => {
+        e.stopPropagation(); // Prevent event propagation to the modal
+        if (property.AllImagePaths && property.AllImagePaths.length > 0) {
+            setCurrentIndex((prevIndex) => (prevIndex - 1 + property.AllImagePaths.length) % property.AllImagePaths.length); // Loop to last image if we reach the start
+        }
+    };
+
     useEffect(() => {
         // Fetch data from the API
         const fetchData = async () => {
@@ -96,31 +125,104 @@ const Properties_detail = () => {
                                                 </div>
 
 
-                                                {/* Updated Images Section */}
                                                 <div className="image mb-30">
-                                                    <div className="single-property-gallery">
-                                                        {property.AllImagePaths && property.AllImagePaths.length > 0 ? (
-                                                            property.AllImagePaths.map((image, index) => (
-                                                                <div className="item" key={index}>
-                                                                    <img src={image} alt={`Property Image ${index + 1}`} />
-                                                                </div>
-                                                            ))
-                                                        ) : (
-                                                            <p>No images available</p>
-                                                        )}
-                                                    </div>
-                                                    <div className="single-property-thumb">
-                                                        {property.AllImagePaths && property.AllImagePaths.length > 0 ? (
-                                                            property.AllImagePaths.map((image, index) => (
-                                                                <div className="item" key={index}>
-                                                                    <img src={image} alt={`Property Thumbnail ${index + 1}`} />
-                                                                </div>
-                                                            ))
-                                                        ) : (
-                                                            <p>No images available</p>
-                                                        )}
-                                                    </div>
-                                                </div>
+            {/* Image Gallery */}
+            <div className="single-property-gallery">
+                {property.AllImagePaths && property.AllImagePaths.length > 0 ? (
+                    property.AllImagePaths.map((image, index) => (
+                        <div className="item" key={index} onClick={() => openModal(image, index)}>
+                            <img src={image} alt={`Property Image ${index + 1}`} />
+                        </div>
+                    ))
+                ) : (
+                    <p>No images available</p>
+                )}
+            </div>
+
+            {/* Image Thumbnails */}
+            <div className="single-property-thumb">
+                {property.AllImagePaths && property.AllImagePaths.length > 0 ? (
+                    property.AllImagePaths.map((image, index) => (
+                        <div className="item" key={index} onClick={() => openModal(image, index)}>
+                            <img src={image} alt={`Property Thumbnail ${index + 1}`} />
+                        </div>
+                    ))
+                ) : (
+                    <p>No images available</p>
+                )}
+            </div>
+
+            {/* Image Modal with Carousel */}
+            {selectedImage && (
+                <div className="image-modal" onClick={closeModal}>
+                    <div className="image-modal-content" onClick={(e) => e.stopPropagation()}> {/* Prevent closing when clicking inside modal content */}
+                        <span className="close" onClick={closeModal}>&times;</span>
+                        <div className="modal-image">
+                            <img src={property.AllImagePaths[currentIndex]} alt="Enlarged Property" />
+                        </div>
+                        {/* Next and Previous Buttons */}
+                        <div className="modal-navigation">
+                            <button className="prev" onClick={goToPrevImage}>&lt;</button>
+                            <button className="next" onClick={goToNextImage}>&gt;</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            <style jsx>{`
+                .image-modal {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.9); /* Full dark overlay */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 9999; /* Above everything */
+                }
+                .image-modal-content {
+                    position: relative;
+                    max-width: 90%;
+                    max-height: 90%;
+                    text-align: center;
+                }
+                .modal-image img {
+                    width: 100%;
+                    height: 100vh;
+                    border-radius: 5px;
+                    object-fit: contain;
+                }
+                .close {
+                    position: absolute;
+                    top: 10px;
+                    right: 20px;
+                    font-size: 30px;
+                    color: white;
+                    cursor: pointer;
+                }
+                .modal-navigation {
+                    position: absolute;
+                    top: 50%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    transform: translateY(-50%);
+                }
+                .prev, .next {
+                    background: rgba(0, 0, 0, 0.5);
+                    color: white;
+                    font-size: 30px;
+                    border: none;
+                    padding: 10px;
+                    cursor: pointer;
+                }
+                .prev:hover, .next:hover {
+                    background: rgba(0, 0, 0, 0.7);
+                }
+            `}</style>
+        </div>
 
                                                 <div className="content">
                                                     <h3>Description:</h3>
@@ -228,11 +330,27 @@ const Properties_detail = () => {
                                                         </div> */}
 
                                                         <div class="comment-form">
-                                                            <div class="col-12"><button class="btn" style={{ backgroundColor: '#29a71a' }}><img
-                                                                src="assets/images/icons/whatsapp.png"
-                                                                alt="WhatsApp"
-                                                                style={{ height: '40px', objectFit: 'cover' }}
-                                                            /> Whatsapp Us</button></div>
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <button class="btn" style={{ backgroundColor: '#29a71a', borderRadius: '5px' }}><img
+                                                                        src="assets/images/icons/whatsapp.png"
+                                                                        alt="WhatsApp"
+                                                                        style={{ height: '40px', objectFit: 'cover' }}
+                                                                    /> Whatsapp Us</button>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <button className="btn" style={{ borderRadius: '5px', padding: '10px 45px' }}>
+                                                                        <img
+                                                                            src="assets/images/icons/call.png"
+                                                                            alt="Call Us"
+                                                                            style={{ height: '40px', objectFit: 'cover' }}
+                                                                        />
+                                                                        Call Us
+                                                                    </button>
+
+                                                                </div>
+                                                            </div>
+
 
                                                         </div>
                                                     </div>
