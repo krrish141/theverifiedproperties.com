@@ -126,50 +126,50 @@ const Properties_detail = () => {
 
 
                                                 <div className="image mb-30">
-            {/* Image Gallery */}
-            <div className="single-property-gallery">
-                {property.AllImagePaths && property.AllImagePaths.length > 0 ? (
-                    property.AllImagePaths.map((image, index) => (
-                        <div className="item" key={index} onClick={() => openModal(image, index)}>
-                            <img src={image} alt={`Property Image ${index + 1}`} />
-                        </div>
-                    ))
-                ) : (
-                    <p>No images available</p>
-                )}
-            </div>
+                                                    {/* Image Gallery */}
+                                                    <div className="single-property-gallery">
+                                                        {property.AllImagePaths && property.AllImagePaths.length > 0 ? (
+                                                            property.AllImagePaths.map((image, index) => (
+                                                                <div className="item" key={index} onClick={() => openModal(image, index)}>
+                                                                    <img src={image} alt={`Property Image ${index + 1}`} />
+                                                                </div>
+                                                            ))
+                                                        ) : (
+                                                            <p>No images available</p>
+                                                        )}
+                                                    </div>
 
-            {/* Image Thumbnails */}
-            <div className="single-property-thumb">
-                {property.AllImagePaths && property.AllImagePaths.length > 0 ? (
-                    property.AllImagePaths.map((image, index) => (
-                        <div className="item" key={index} onClick={() => openModal(image, index)}>
-                            <img src={image} alt={`Property Thumbnail ${index + 1}`} />
-                        </div>
-                    ))
-                ) : (
-                    <p>No images available</p>
-                )}
-            </div>
+                                                    {/* Image Thumbnails */}
+                                                    <div className="single-property-thumb">
+                                                        {property.AllImagePaths && property.AllImagePaths.length > 0 ? (
+                                                            property.AllImagePaths.map((image, index) => (
+                                                                <div className="item" key={index} onClick={() => openModal(image, index)}>
+                                                                    <img src={image} alt={`Property Thumbnail ${index + 1}`} />
+                                                                </div>
+                                                            ))
+                                                        ) : (
+                                                            <p>No images available</p>
+                                                        )}
+                                                    </div>
 
-            {/* Image Modal with Carousel */}
-            {selectedImage && (
-                <div className="image-modal" onClick={closeModal}>
-                    <div className="image-modal-content" onClick={(e) => e.stopPropagation()}> {/* Prevent closing when clicking inside modal content */}
-                        <span className="close" onClick={closeModal}>&times;</span>
-                        <div className="modal-image">
-                            <img src={property.AllImagePaths[currentIndex]} alt="Enlarged Property" />
-                        </div>
-                        {/* Next and Previous Buttons */}
-                        <div className="modal-navigation">
-                            <button className="prev" onClick={goToPrevImage}>&lt;</button>
-                            <button className="next" onClick={goToNextImage}>&gt;</button>
-                        </div>
-                    </div>
-                </div>
-            )}
+                                                    {/* Image Modal with Carousel */}
+                                                    {selectedImage && (
+                                                        <div className="image-modal" onClick={closeModal}>
+                                                            <div className="image-modal-content" onClick={(e) => e.stopPropagation()}> {/* Prevent closing when clicking inside modal content */}
+                                                                <span className="close" onClick={closeModal}>&times;</span>
+                                                                <div className="modal-image">
+                                                                    <img src={property.AllImagePaths[currentIndex]} alt="Enlarged Property" />
+                                                                </div>
+                                                                {/* Next and Previous Buttons */}
+                                                                <div className="modal-navigation">
+                                                                    <button className="prev" onClick={goToPrevImage}>&lt;</button>
+                                                                    <button className="next" onClick={goToNextImage}>&gt;</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )}
 
-            <style jsx>{`
+                                                    <style jsx>{`
                 .image-modal {
                     position: fixed;
                     top: 0;
@@ -222,7 +222,7 @@ const Properties_detail = () => {
                     background: rgba(0, 0, 0, 0.7);
                 }
             `}</style>
-        </div>
+                                                </div>
 
                                                 <div className="content">
                                                     <h3>Description:</h3>
@@ -329,30 +329,35 @@ const Properties_detail = () => {
 
                                                         </div> */}
 
-                                                        <div class="comment-form">
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <button class="btn" style={{ backgroundColor: '#29a71a', borderRadius: '5px' }}><img
-                                                                        src="assets/images/icons/whatsapp.png"
-                                                                        alt="WhatsApp"
-                                                                        style={{ height: '40px', objectFit: 'cover' }}
-                                                                    /> Whatsapp Us</button>
+                                                        <div className="comment-form">
+                                                            <div className="row">
+                                                                <div className="col-6">
+                                                                    <a href="https://wa.me/7972108208" target="_blank" rel="noopener noreferrer">
+                                                                        <button className="btn" style={{ backgroundColor: '#29a71a', borderRadius: '5px' }}>
+                                                                            <img
+                                                                                src="assets/images/icons/whatsapp.png"
+                                                                                alt="WhatsApp"
+                                                                                style={{ height: '40px', objectFit: 'cover' }}
+                                                                            />
+                                                                            Whatsapp Us
+                                                                        </button>
+                                                                    </a>
                                                                 </div>
-                                                                <div class="col-6">
-                                                                    <button className="btn" style={{ borderRadius: '5px', padding: '10px 45px' }}>
-                                                                        <img
-                                                                            src="assets/images/icons/call.png"
-                                                                            alt="Call Us"
-                                                                            style={{ height: '40px', objectFit: 'cover' }}
-                                                                        />
-                                                                        Call Us
-                                                                    </button>
-
+                                                                <div className="col-6">
+                                                                    <a href="tel:+917972108208">
+                                                                        <button className="btn" style={{ borderRadius: '5px', padding: '10px 45px' }}>
+                                                                            <img
+                                                                                src="assets/images/icons/call.png"
+                                                                                alt="Call Us"
+                                                                                style={{ height: '40px', objectFit: 'cover' }}
+                                                                            />
+                                                                            Call Us
+                                                                        </button>
+                                                                    </a>
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
+
                                                     </div>
 
                                                 </div>

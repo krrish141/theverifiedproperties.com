@@ -71,7 +71,11 @@ const New = () => {
 
               return (
                 <div key={PostUrl} className="property-item col-lg-4 col-md-6 col-12 mb-40">
-                  <div className="property-inner">
+                  <div className="property-inner"  style={{
+    border: "2px solid #ccc",
+    boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)",
+    borderRadius:"10px"
+  }}>
                     <div className="image">
                      <Link 
                        to={`/properties_detail?slug=${PostUrl}`} 
@@ -127,7 +131,7 @@ const New = () => {
                       <div className="center">
                         <div className="type-wrap">
                           {/* WhatsApp button */}
-                          <a href="https://wa.me/918329134673" target="_blank" rel="noopener noreferrer">
+                          <a href="https://wa.me/917972108208" target="_blank" rel="noopener noreferrer">
                             <img
                               src="assets/images/icons/whatsapp.png"
                               alt="WhatsApp"
@@ -140,7 +144,7 @@ const New = () => {
                       <div className="right">
                         <div className="type-wrap">
                           {/* Call button */}
-                          <a href="tel:+918329134673">
+                          <a href="tel:+917972108208">
                             <img
                               src="assets/images/icons/call.png"
                               alt="Call"

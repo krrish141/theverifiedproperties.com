@@ -6,22 +6,43 @@ const Banner = () => {
   const [zoomClass, setZoomClass] = useState(""); // State to control zoom effect
   const sliderItems = [
     {
-      backgroundImage: "assets/images/hero/hero4.jpg",
+      backgroundImage: "assets/images/banner/banner1.avif",
       title: "The Verified Properties",
       location: null,
     },
     {
-      backgroundImage: "assets/images/hero/hero3.jpg",
+      backgroundImage: "assets/images/banner/banner2.jpg",
       title: "The Verified Properties",
       location: null,
     },
     {
-      backgroundImage: "assets/images/hero/hero2.jpg",
+      backgroundImage: "assets/images/banner/banner3.jpg",
       title: "The Verified Properties",
       location: null,
     },
     {
-      backgroundImage: "assets/images/hero/hero1.jpg",
+      backgroundImage: "assets/images/banner/banner4.jpg",
+      title: "The Verified Properties",
+      location: null,
+    },
+    {
+      backgroundImage: "assets/images/banner/banner5.jpg",
+      title: "The Verified Properties",
+      location: null,
+    },
+    {
+      backgroundImage: "assets/images/banner/banner6.jpg",
+      title: "The Verified Properties",
+      location: null,
+    },
+    {
+      backgroundImage: "assets/images/banner/banner7.jpg",
+      title: "The Verified Properties",
+      location: null,
+    },
+
+    {
+      backgroundImage: "assets/images/banner/banner8.avif",
       title: "The Verified Properties",
       location: null,
     },

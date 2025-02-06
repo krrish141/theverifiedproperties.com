@@ -109,7 +109,7 @@ const Sale_Land = () => {
                               >
                                 {PostImagePath && <img src={PostImagePath} alt={PostTitle} style={{ height: '275px', objectFit: 'fill' }} />}
                               </Link>
-                              <ul className="property-feature">
+                              {/* <ul className="property-feature">
                                 <li>
                                   <span className="area">
                                     <img src="assets/images/icons/area.png" alt="" />
@@ -128,7 +128,7 @@ const Sale_Land = () => {
                                     {Road}
                                   </span>
                                 </li>
-                              </ul>
+                              </ul> */}
                             </div>
                             <div className="content">
                               <div className="left">
@@ -177,7 +177,7 @@ const Sale_Land = () => {
                               <div className="center">
                                 <div className="type-wrap">
                                   {/* WhatsApp button */}
-                                  <a href="https://wa.me/918329134673" target="_blank" rel="noopener noreferrer">
+                                  <a href="https://wa.me/917972108208" target="_blank" rel="noopener noreferrer">
                                     <img
                                       src="assets/images/icons/whatsapp.png"
                                       alt="WhatsApp"
@@ -190,7 +190,7 @@ const Sale_Land = () => {
                               <div className="right">
                                 <div className="type-wrap">
                                   {/* Call button */}
-                                  <a href="tel:+918329134673">
+                                  <a href="tel:+917972108208">
                                     <img
                                       src="assets/images/icons/call.png"
                                       alt="Call"

@@ -227,7 +227,7 @@ img {
 }
 @media only screen and (max-width: 479px) {
   .container {
-    max-width: 350px;
+    max-width: 400px;
   }
 }
 .no-gutters {
@@ -865,7 +865,7 @@ header.header.is-sticky {
   margin-right: 0;
 }
 .main-menu > ul > li > a {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 30px;
   font-weight: 600;
   letter-spacing: 0.25px;
@@ -1000,6 +1000,7 @@ header.header.is-sticky {
   width: 26px;
   background-color: #222222;
   display: block;
+  /* right: -15px; */
 
 }
 .mobile-menu .mean-bar .meanmenu-reveal span.menu-bar::before, .mobile-menu .mean-bar .meanmenu-reveal span.menu-bar::after {
@@ -1202,7 +1203,7 @@ header.header.is-sticky {
 }
 @media only screen and (max-width: 767px) {
   .hero-section {
-    margin-top: 81px;
+    margin-top: 1px;
   }
 }
 .hero-section .inline-YTPlayer {
@@ -2445,6 +2446,7 @@ header.header.is-sticky {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+          padding: 0px 10px;
 }
 .property-item .property-inner .content .left {
   -webkit-box-flex: 1;
@@ -2452,11 +2454,25 @@ header.header.is-sticky {
           flex: 1 0 calc(100% - 140px);
   padding-right: 15px;
 }
+
+
 .property-item .property-inner .content .left .title {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 13px;
 }
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .property-item .property-inner .content .left .title {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
 .property-item .property-inner .content .left .location {
   position: relative;
   font-size: 15px;
@@ -2485,8 +2501,15 @@ header.header.is-sticky {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
+@media (max-width: 768px) {
+  .property-item .property-inner .content .right .type-wrap .price { 
+    font-size: 15px !important;
+  }
+}
+
 .property-item .property-inner .content .right .type-wrap .price {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1;
   display: -webkit-box;
@@ -5709,6 +5732,7 @@ div#goog-gt- {
 #google_translate_element select {
   background: #ffffff;
   color: #2d1894;
+  font-size: 8px;
   border: 1px solid #111;
   border-radius: 3px;
   padding: 6px 8px;
