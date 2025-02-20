@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 
 const New = () => {
   const [featuredData, setFeaturedData] = useState([]); // State for featured properties
@@ -55,7 +58,7 @@ const New = () => {
           {loading && <p>Loading featured properties...</p>}
           {isError && <p>{isError}</p>}
           {featuredData.length > 0 ? (
-            featuredData.slice(0, 6).map((property) => {
+            featuredData.slice(0, 1000000).map((property) => {
               const {
                 PostUrl,
                 PostTitle,
@@ -81,7 +84,7 @@ const New = () => {
                        to={`/properties_detail?slug=${PostUrl}`} 
                        onClick={() => window.location.href = `/properties_detail?slug=${PostUrl}`}
                      >
-                        <img src={PostImagePath || "assets/images/property/property-1.jpg"} alt={PostTitle} />
+                        <LazyLoadImage src={PostImagePath || "assets/images/property/property-1.jpg"} alt={PostTitle} effect="blur"/>
                       </Link>
                       {/* <ul className="property-feature">
                         <li>

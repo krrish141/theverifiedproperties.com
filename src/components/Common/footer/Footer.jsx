@@ -60,8 +60,8 @@ const Footer = () => {
                             <div className="footer-widget col-lg-2 col-md-3 col-12 mb-40">
                                 <h4 className="title"><span className="text">Sell</span><span className="shape"></span></h4>
                                 <ul>
-                                    <li><Link to="/sale">Bunglow</Link></li>
-                                    <li><Link to="/sale">Flat</Link></li>
+                                    <li><Link to="/sale">Bungalow</Link></li>
+                                    <li><Link to="/sale">Apartment</Link></li>
                                     <li><Link to="/sale">House</Link></li>
                                     <li><Link to="/sale">Land</Link></li>
                                 </ul>
@@ -72,8 +72,8 @@ const Footer = () => {
                             <div className="footer-widget col-lg-2 col-md-3 col-12 mb-40">
                                 <h4 className="title"><span className="text">Rent</span><span className="shape"></span></h4>
                                 <ul>
-                                    <li><Link to="/rent">Bunglow</Link></li>
-                                    <li><Link to="/rent">Flat</Link></li>
+                                    <li><Link to="/rent">Bungalow</Link></li>
+                                    <li><Link to="/rent">Apartment</Link></li>
                                     <li><Link to="/rent">House</Link></li>
                                 </ul>
                             </div>

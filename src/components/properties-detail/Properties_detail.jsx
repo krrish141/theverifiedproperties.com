@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import Feature from "./Feature";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Properties_detail = () => {
     const location = useLocation(); // Hook to get the current URL location
@@ -131,7 +133,7 @@ const Properties_detail = () => {
                                                         {property.AllImagePaths && property.AllImagePaths.length > 0 ? (
                                                             property.AllImagePaths.map((image, index) => (
                                                                 <div className="item" key={index} onClick={() => openModal(image, index)}>
-                                                                    <img src={image} alt={`Property Image ${index + 1}`} />
+                                                                    <LazyLoadImage src={image} alt={`Property Image ${index + 1}`}  effect="blur"/>
                                                                 </div>
                                                             ))
                                                         ) : (
@@ -262,21 +264,40 @@ const Properties_detail = () => {
                                                     <div class="row">
 
 
-                                                        <div className="col-12 mb-30">
-                                                            <h3>Video</h3>
-                                                            {property.AllVideoPaths && property.AllVideoPaths.length > 0 ? (
-                                                                property.AllVideoPaths.map((video, index) => (
-                                                                    <div className="embed-responsive ratio ratio-16x9 mt-50" key={index}>
-                                                                        <video controls>
-                                                                            <source src={video} type="video/mp4" />
-                                                                            Your browser does not support the video tag.
-                                                                        </video>
-                                                                    </div>
-                                                                ))
-                                                            ) : (
-                                                                <p>No videos available</p>
-                                                            )}
-                                                        </div>
+                                                    <div className="col-12 mb-30">
+    <h3>Video</h3>
+    {property.AllVideoPaths && property.AllVideoPaths.length > 0 ? (
+        property.AllVideoPaths.map((video, index) => {
+            // Check if the video URL is from YouTube
+            const isYouTube = video.includes("youtube.com") || video.includes("youtu.be");
+
+            return (
+                <div className="embed-responsive ratio ratio-16x9 mt-50" key={index}>
+                    {isYouTube ? (
+                        // Extract the YouTube video ID and embed it in an iframe
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src={`https://www.youtube.com/embed/${new URL(video).searchParams.get("v") || video.split('/').pop()}`}
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    ) : (
+                        <video controls>
+                            <source src={video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    )}
+                </div>
+            );
+        })
+    ) : (
+        <p>No videos available</p>
+    )}
+</div>
+
 
 
 

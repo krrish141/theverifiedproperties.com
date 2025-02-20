@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocation, useSearchParams, Link } from "react-router-dom";
 
 const Search = () => {
   const [searchType, setSearchType] = useState("For Rent"); // Optional if you want to include more functionality
@@ -48,9 +49,13 @@ const Search = () => {
           </div>
         </div>
         <div className="row center">
-          <div className="col">
+
+          <div className="col-md-2">
+          </div>
+
+          <div className="col-md-10">
             <div className="property-search">
-              <form onSubmit={handleSubmit} className="center">
+              <form onSubmit={handleSubmit} className="search-form">
                 <div>
                   <input
                     type="text"
@@ -65,7 +70,48 @@ const Search = () => {
               </form>
             </div>
           </div>
+
+         
+
+          <div className="col-md-12 pt-100">
+            <div className="hero-search">
+              <form action="#" className="search-container">
+                <div className="search-item">
+                  <Link to={`/search-detail?searchTitle=land`}>
+                    <img src="assets/images/icons/plot.png" alt="Land/ Plots" />
+                    <h4>Land/ Plots</h4>
+                  </Link>
+                </div>
+
+                <div className="search-item">
+                  <Link to={`/search-detail?searchTitle=apartments`}>
+                    <img src="assets/images/icons/apartment.png" alt="Apartments" />
+                    <h4>Apartments</h4>
+                  </Link>
+                </div>
+
+                <div className="search-item">
+                  <Link to={`/search-detail?searchTitle=farmland`}>
+                    <img src="assets/images/icons/farmland.png" alt="Farmland" />
+                    <h4>Farmland</h4>
+                  </Link>
+                </div>
+
+                <div className="search-item">
+                  <Link to={`/search-detail?searchTitle=bungalows`}>
+                    <img src="assets/images/icons/country-house.png" alt="Bungalows" />
+                    <h4>Bungalows</h4>
+                  </Link>
+                </div>
+              </form>
+            </div>
+          </div>
+
+
+
+
         </div>
+
       </div>
     </div>
   );

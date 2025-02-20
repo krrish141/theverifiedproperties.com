@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Sale_Bungalow = () => {
   const [myData, setMyData] = useState([]);
@@ -172,9 +174,9 @@ const Sale_Bungalow = () => {
                                 <div className="type-wrap">
                                   {/* WhatsApp button */}
                                   <a href="https://wa.me/917972108208" target="_blank" rel="noopener noreferrer">
-                                    <img
+                                    <LazyLoadImage
                                       src="assets/images/icons/whatsapp.png"
-                                      alt="WhatsApp"
+                                      alt="WhatsApp"  effect="blur"
                                       style={{ height: '40px', objectFit: 'cover' }}
                                     />
                                   </a>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Sale_Flat = () => {
   const [myData, setMyData] = useState([]);
@@ -104,7 +106,7 @@ const Sale_Flat = () => {
                             <div className="image">
                               <span className="label">{Subcategory}</span>
                               <a href={`/properties_detail/?slug=${PostUrl}`}>
-                                {PostImagePath && <img src={PostImagePath} alt={PostTitle} style={{ height: '275px', objectFit: 'fill' }} />}
+                                {PostImagePath && <LazyLoadImage src={PostImagePath}  effect="blur" alt={PostTitle} style={{ height: '275px', objectFit: 'fill' }} />}
                               </a>
                               {/* <ul className="property-feature">
                                 <li>

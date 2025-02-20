@@ -23,7 +23,7 @@ const Services = () =>{
                   <div className="property-slider-2">
                       <div className="property-2">
                           <div className="property-inner">
-                              <a href="" className="image"><img src="assets/images/property/property-13.jpg" alt="" /></a>
+                              <a href="" className="image"><img src="assets/images/property/service1.webp" alt="" /></a>
                               <div className="content">
                                   <h4 className="title"><a href="">The Verified Properties</a></h4>
                                </div>
@@ -31,13 +31,41 @@ const Services = () =>{
                       </div>
                       <div className="property-2">
                           <div className="property-inner">
-                              <a href="" className="image"><img src="assets/images/property/property-14.jpg" alt="" /></a>
+                              <a href="" className="image"><img src="assets/images/property/service2.webp" alt="" /></a>
                               <div className="content">
                                   <h4 className="title"><a href="">The Verified Properties</a></h4>
                                  
                               </div>
                           </div>
                       </div>
+                      <div className="property-2">
+                          <div className="property-inner">
+                              <a href="" className="image"><img src="assets/images/property/service3.webp" alt="" /></a>
+                              <div className="content">
+                                  <h4 className="title"><a href="">The Verified Properties</a></h4>
+                                 
+                              </div>
+                          </div>
+                      </div>
+                      <div className="property-2">
+                          <div className="property-inner">
+                              <a href="" className="image"><img src="assets/images/property/service4.webp" alt="" /></a>
+                              <div className="content">
+                                  <h4 className="title"><a href="">The Verified Properties</a></h4>
+                                 
+                              </div>
+                          </div>
+                      </div>
+                      <div className="property-2">
+                          <div className="property-inner">
+                              <a href="" className="image"><img src="assets/images/property/service5.webp" alt="" /></a>
+                              <div className="content">
+                                  <h4 className="title"><a href="">The Verified Properties</a></h4>
+                                 
+                              </div>
+                          </div>
+                      </div>
+                    
                   </div>
               </div>
 
@@ -51,7 +79,7 @@ const Services = () =>{
                               <div className="service-inner">
                                   <div className="head">
                                       <div className="icon"><img src="assets/images/service/service-1.png" alt="" /></div>
-                                      <h4>Sale Properties</h4>
+                                      <h4>Sale/Buy Properties</h4>
                                   </div>
                                   <div className="content">
                                       <p>The Verified Properties - Find your dream home or property for sale.</p>
@@ -62,7 +90,7 @@ const Services = () =>{
                       {/* <!--Service end--> */}
 
                       {/* <!--Service start--> */}
-                      <div className="col-md-6 col-12 mb-30">
+                      {/* <div className="col-md-6 col-12 mb-30">
                           <div className="service">
                               <div className="service-inner">
                                   <div className="head">
@@ -74,7 +102,7 @@ const Services = () =>{
                                   </div>
                               </div>
                           </div>
-                      </div>
+                      </div> */}
                       {/* <!--Service end--> */}
 
                       {/* <!--Service start--> */}

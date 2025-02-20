@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Feature = () => {
   const [featuredData, setFeaturedData] = useState([]); // State for featured properties
@@ -75,7 +77,7 @@ const Feature = () => {
                             to={`/properties_detail?slug=${PostUrl}`} 
                             onClick={() => window.location.href = `/properties_detail?slug=${PostUrl}`}
                           >
-                            {PostImagePath && <img src={PostImagePath} alt={PostTitle} style={{ height: '270px', objectFit: 'cover' }} />}
+                            {PostImagePath && <LazyLoadImage src={PostImagePath} alt={PostTitle} effect="blur" style={{ height: '270px', objectFit: 'cover' }} />}
                           </Link>
                           {/* <ul className="property-feature">
                             <li>

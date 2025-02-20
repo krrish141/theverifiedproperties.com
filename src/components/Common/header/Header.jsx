@@ -34,7 +34,7 @@ const Header = () => {
                                             <a href="/sale">Sell</a>
                                             <ul className="sub-menu">
                                                 <li><a href="/sale_bungalow">Bungalow</a></li>
-                                                <li><a href="/sale_flat">Flat</a></li>
+                                                <li><a href="/sale_flat">Apartpart</a></li>
                                                 <li><a href="/sale_house">House</a></li>
                                                 <li><a href="/sale_land">Land</a></li>
                                             </ul>
@@ -43,7 +43,7 @@ const Header = () => {
                                             <a href="/rent">Rent</a>
                                             <ul className="sub-menu">
                                                 <li><a href="/rent_bungalow">Bungalow</a></li>
-                                                <li><a href="/rent_flat">Flat</a></li>
+                                                <li><a href="/rent_flat">Apartpart</a></li>
                                                 <li><a href="/rent_house">House</a></li>
                                             </ul>
                                         </li>
