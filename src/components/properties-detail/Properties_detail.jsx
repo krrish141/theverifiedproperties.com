@@ -351,7 +351,7 @@ const Properties_detail = () => {
                                                         </div> */}
 
 
-                                                        <div class="agency-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+                                                        <div class="agency-section section ">
                                                             <div class="container">
 
                                                                 <div class="row row-25">
@@ -369,14 +369,13 @@ const Properties_detail = () => {
                                                                        
 
                                                                             <div class="social">
-                                                                                <a  href="https://wa.me/7972108208" target="_blank"  ><img
+                                                                                <a  href="https://wa.me/7972108208" target="_blank"  style={{ width: '80px', objectFit: 'cover' }}><img
                                                                                     src="assets/images/icons/whatsapp.png"
                                                                                     alt="WhatsApp"/>
                                                                                 </a>
-                                                                                <a href="tel:+917972108208" target="_blank"  ><img
+                                                                                <a href="tel:+917972108208" target="_blank" style={{ width: '80px', objectFit: 'cover' }} ><img
                                                                                 src="assets/images/icons/call.png"
                                                                                 alt="Call Us"
-                                                                                style={{ height: '40px', objectFit: 'cover' }}
                                                                             /></a>
                                                                             </div>
                                                                         </div>
