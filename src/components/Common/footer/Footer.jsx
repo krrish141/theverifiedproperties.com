@@ -128,6 +128,76 @@ const Footer = () => {
                 </div>
                 {/* <!--Footer bottom end--> */}
 
+             
+
+    <a
+      href="https://wa.me/7972108208"
+      className="floating"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        position: "fixed",
+        zIndex: 999,
+        bottom: "150px",
+        right: "8px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+         src="assets/images/icons/whatsapp.png"
+         alt="WhatsApp"
+
+        style={{
+          backgroundColor: "#25d366",
+          width: "50px",
+          height: "50px",
+          color: "#fff",
+          borderRadius: "50%",
+          textAlign: "center",
+          fontSize: "35px",
+          boxShadow: "2px 2px 3px #999",
+          paddingTop: "1px",
+        }}
+      />
+    </a>
+  
+    <a
+      href="tel:+917972108208"
+      className="floating"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        position: "fixed",
+        zIndex: 999,
+        bottom: "210px",
+        right: "8px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+         src="assets/images/icons/call.png"
+         alt="WhatsApp"
+
+        style={{
+          backgroundColor: "rgb(0 67 149)",
+          width: "50px",
+          height: "50px",
+          color: "#fff",
+          borderRadius: "50%",
+          textAlign: "center",
+          fontSize: "35px",
+          boxShadow: "2px 2px 3px #999",
+          paddingTop: "1px",
+        }}
+      />
+    </a>
+  
+
+
             </footer>
         </>
     )

@@ -133,7 +133,7 @@ const Properties_detail = () => {
                                                         {property.AllImagePaths && property.AllImagePaths.length > 0 ? (
                                                             property.AllImagePaths.map((image, index) => (
                                                                 <div className="item" key={index} onClick={() => openModal(image, index)}>
-                                                                    <LazyLoadImage src={image} alt={`Property Image ${index + 1}`}  effect="blur"/>
+                                                                    <LazyLoadImage src={image} alt={`Property Image ${index + 1}`} effect="blur" />
                                                                 </div>
                                                             ))
                                                         ) : (
@@ -264,39 +264,39 @@ const Properties_detail = () => {
                                                     <div class="row">
 
 
-                                                    <div className="col-12 mb-30">
-    <h3>Video</h3>
-    {property.AllVideoPaths && property.AllVideoPaths.length > 0 ? (
-        property.AllVideoPaths.map((video, index) => {
-            // Check if the video URL is from YouTube
-            const isYouTube = video.includes("youtube.com") || video.includes("youtu.be");
+                                                        <div className="col-12 mb-30">
+                                                            <h3>Video</h3>
+                                                            {property.AllVideoPaths && property.AllVideoPaths.length > 0 ? (
+                                                                property.AllVideoPaths.map((video, index) => {
+                                                                    // Check if the video URL is from YouTube
+                                                                    const isYouTube = video.includes("youtube.com") || video.includes("youtu.be");
 
-            return (
-                <div className="embed-responsive ratio ratio-16x9 mt-50" key={index}>
-                    {isYouTube ? (
-                        // Extract the YouTube video ID and embed it in an iframe
-                        <iframe
-                            width="100%"
-                            height="100%"
-                            src={`https://www.youtube.com/embed/${new URL(video).searchParams.get("v") || video.split('/').pop()}`}
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
-                    ) : (
-                        <video controls>
-                            <source src={video} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    )}
-                </div>
-            );
-        })
-    ) : (
-        <p>No videos available</p>
-    )}
-</div>
+                                                                    return (
+                                                                        <div className="embed-responsive ratio ratio-16x9 mt-50" key={index}>
+                                                                            {isYouTube ? (
+                                                                                // Extract the YouTube video ID and embed it in an iframe
+                                                                                <iframe
+                                                                                    width="100%"
+                                                                                    height="100%"
+                                                                                    src={`https://www.youtube.com/embed/${new URL(video).searchParams.get("v") || video.split('/').pop()}`}
+                                                                                    title="YouTube video player"
+                                                                                    frameBorder="0"
+                                                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                                                    allowFullScreen
+                                                                                ></iframe>
+                                                                            ) : (
+                                                                                <video controls>
+                                                                                    <source src={video} type="video/mp4" />
+                                                                                    Your browser does not support the video tag.
+                                                                                </video>
+                                                                            )}
+                                                                        </div>
+                                                                    );
+                                                                })
+                                                            ) : (
+                                                                <p>No videos available</p>
+                                                            )}
+                                                        </div>
 
 
 
@@ -350,7 +350,45 @@ const Properties_detail = () => {
 
                                                         </div> */}
 
-                                                        <div className="comment-form">
+
+                                                        <div class="agency-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+                                                            <div class="container">
+
+                                                                <div class="row row-25">
+
+                                                                    <div class="col-lg-5 col-12 mb-sm-30 mb-xs-30">
+                                                                        <div class="agency-image">
+                                                                            <img src="assets/images/logo.png" alt="" />
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-7 col-12">
+                                                                        <div class="agency-content">
+                                                                            <h3 class="title">The Verified Propertise</h3>
+                                                                            <p>Contact The Verified Properties via Call or WhatsApp anytime for assistance.</p>
+                                                                       
+
+                                                                            <div class="social">
+                                                                                <a  href="https://wa.me/7972108208" target="_blank"  ><img
+                                                                                    src="assets/images/icons/whatsapp.png"
+                                                                                    alt="WhatsApp"/>
+                                                                                </a>
+                                                                                <a href="tel:+917972108208" target="_blank"  ><img
+                                                                                src="assets/images/icons/call.png"
+                                                                                alt="Call Us"
+                                                                                style={{ height: '40px', objectFit: 'cover' }}
+                                                                            /></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                        {/* <div className="comment-form">
                                                             <div className="row">
                                                                 <div className="col-6">
                                                                     <a href="https://wa.me/7972108208" target="_blank" rel="noopener noreferrer">
@@ -360,7 +398,6 @@ const Properties_detail = () => {
                                                                                 alt="WhatsApp"
                                                                                 style={{ height: '40px', objectFit: 'cover' }}
                                                                             />
-                                                                            Whatsapp Us
                                                                         </button>
                                                                     </a>
                                                                 </div>
@@ -372,12 +409,11 @@ const Properties_detail = () => {
                                                                                 alt="Call Us"
                                                                                 style={{ height: '40px', objectFit: 'cover' }}
                                                                             />
-                                                                            Call Us
                                                                         </button>
                                                                     </a>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div> */}
 
                                                     </div>
 

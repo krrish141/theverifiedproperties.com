@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation, useSearchParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Search = () => {
-  const [searchType, setSearchType] = useState("For Rent"); // Optional if you want to include more functionality
-  const [searchTitle, setSearchTitle] = useState("");
-  const [data, setData] = useState([]); // API data
+  const [searchLocation, setSearchLocation] = useState("");
+  const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  // Fetch data from API on component mount
+  // Fetch data from API
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -16,7 +15,7 @@ const Search = () => {
           "https://theverifiedproperties.com/the-verified-properties-admin/api/get_property.php"
         );
         const result = await response.json();
-        setData(result.data || []); // Ensure data is an array
+        setData(result.data || []);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -27,14 +26,17 @@ const Search = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Filter matching titles
+    // Convert search query to lowercase words array
+    const searchWords = searchLocation.toLowerCase().split(" ");
+
+    // Filter matching locations
     const filteredData = data.filter((item) =>
-      item.PostTitle.toLowerCase().includes(searchTitle.toLowerCase())
+      searchWords.some((word) => item.Location.toLowerCase().includes(word))
     );
 
-    // Add search title as a query parameter in the URL
-    navigate(`/search-detail?searchTitle=${encodeURIComponent(searchTitle)}`, {
-      state: { searchType, searchTitle, results: filteredData },
+    // Navigate to search results page
+    navigate(`/search-detail?searchLocation=${encodeURIComponent(searchLocation)}`, {
+      state: { searchLocation, results: filteredData },
     });
   };
 
@@ -49,19 +51,16 @@ const Search = () => {
           </div>
         </div>
         <div className="row center">
-
-          <div className="col-md-2">
-          </div>
-
+          <div className="col-md-2"></div>
           <div className="col-md-10">
             <div className="property-search">
               <form onSubmit={handleSubmit} className="search-form">
                 <div>
                   <input
                     type="text"
-                    placeholder="Title"
-                    value={searchTitle}
-                    onChange={(e) => setSearchTitle(e.target.value)}
+                    placeholder="Enter Location"
+                    value={searchLocation}
+                    onChange={(e) => setSearchLocation(e.target.value)}
                   />
                 </div>
                 <div>
@@ -71,34 +70,29 @@ const Search = () => {
             </div>
           </div>
 
-         
-
           <div className="col-md-12 pt-100">
             <div className="hero-search">
-              <form action="#" className="search-container">
+              <form className="search-container">
                 <div className="search-item">
-                  <Link to={`/search-detail?searchTitle=land`}>
+                  <Link to={`/search-detail?searchLocation=land`}>
                     <img src="assets/images/icons/plot.png" alt="Land/ Plots" />
-                    <h4>Land/ Plots</h4>
+                    <h4>Land</h4>
                   </Link>
                 </div>
-
                 <div className="search-item">
-                  <Link to={`/search-detail?searchTitle=apartments`}>
+                  <Link to={`/search-detail?searchLocation=apartments`}>
                     <img src="assets/images/icons/apartment.png" alt="Apartments" />
                     <h4>Apartments</h4>
                   </Link>
                 </div>
-
                 <div className="search-item">
-                  <Link to={`/search-detail?searchTitle=farmland`}>
+                  <Link to={`/search-detail?searchLocation=farmland`}>
                     <img src="assets/images/icons/farmland.png" alt="Farmland" />
                     <h4>Farmland</h4>
                   </Link>
                 </div>
-
                 <div className="search-item">
-                  <Link to={`/search-detail?searchTitle=bungalows`}>
+                  <Link to={`/search-detail?searchLocation=bungalows`}>
                     <img src="assets/images/icons/country-house.png" alt="Bungalows" />
                     <h4>Bungalows</h4>
                   </Link>
@@ -106,12 +100,7 @@ const Search = () => {
               </form>
             </div>
           </div>
-
-
-
-
         </div>
-
       </div>
     </div>
   );
