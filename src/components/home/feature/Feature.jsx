@@ -117,29 +117,47 @@ const Feature = () => {
                             </li>
                           </ul> */}
                         </div>
-                        <div className="content">
-                          <div className="left">
-                            <h3 className="title">
-                              <Link 
-                                to={`/properties_detail?slug=${PostUrl}`} 
-                                onClick={() => window.location.href = `/properties_detail?slug=${PostUrl}`}
-                              >{PostTitle}</Link>
-                            </h3>
-                            <span className="location">
-                              <img src="assets/images/icons/marker.png" alt="" />
-                              {Location}
-                            </span>
-                          </div>
-                          <div className="right">
-                            <div className="type-wrap">
-                              <span className="price">₹{Price}</span>
-                              <span className="type">{CategoryName}</span>
-                            </div>
-                          </div>
-                        </div>
-
-
-                        <hr />
+                          <div className="content">
+                        
+                                              <div className="left">
+                                                <h3 className="title">
+                                                  <Link
+                                                    to={`/properties_detail?slug=${PostUrl}`}
+                                                    onClick={() => window.location.href = `/properties_detail?slug=${PostUrl}`}
+                                                  >{PostTitle}</Link>
+                                                </h3>
+                        
+                                                
+                                                <span className="location" style={{fontWeight:"600"}}>
+                                                  Plot Area: {Area || " not available"}
+                                                </span>
+                                              
+                        
+                                              </div>
+                        
+                                              <div className="right">
+                                                <div className="type-wrap">
+                                                  <span className="price">{Price || "NA"}</span>
+                                                  <span className="type">{CategoryName}</span>
+                                                </div>
+                                              </div>
+                        
+                        
+                                            </div>
+                                            <hr />
+                        
+                        
+                                            <div className="content">
+                                              <div className="left">
+                                                <span className="location">
+                                                  <img src="assets/images/icons/marker.png" alt="" />
+                                                  {Location || "Location not available"}
+                                                </span>
+                                              </div>
+                        
+                                            </div>
+                        
+                                            <hr />
 
                         <div className="content">
                           <div className="left">

@@ -74,21 +74,21 @@ const New = () => {
 
               return (
                 <div key={PostUrl} className="property-item col-lg-4 col-md-6 col-12 mb-40">
-  <div
-    className="property-inner"
-    style={{
-      border: "2px solid #ccc",
-      boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)",
-      borderRadius: "10px",
-      // minHeight: "80vh", 
-      height: "auto",
-      // display: "flex",
-      // flexDirection: "column",
-      // justifyContent: "space-between",
-    }}
-  >
-    <style>
-      {`
+                  <div
+                    className="property-inner"
+                    style={{
+                      border: "2px solid #ccc",
+                      boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)",
+                      borderRadius: "10px",
+                      // minHeight: "80vh", 
+                      height: "auto",
+                      // display: "flex",
+                      // flexDirection: "column",
+                      // justifyContent: "space-between",
+                    }}
+                  >
+                    <style>
+                      {`
         @media (max-width: 1024px) {
           .property-inner {
             min-height: 70vh;
@@ -104,13 +104,13 @@ const New = () => {
        
         }
       `}
-    </style>
+                    </style>
                     <div className="image">
-                     <Link 
-                       to={`/properties_detail?slug=${PostUrl}`} 
-                       onClick={() => window.location.href = `/properties_detail?slug=${PostUrl}`}
-                     >
-                        <LazyLoadImage src={PostImagePath || "assets/images/property/property-1.jpg"} alt={PostTitle} effect="blur"/>
+                      <Link
+                        to={`/properties_detail?slug=${PostUrl}`}
+                        onClick={() => window.location.href = `/properties_detail?slug=${PostUrl}`}
+                      >
+                        <LazyLoadImage src={PostImagePath || "assets/images/property/property-1.jpg"} alt={PostTitle} effect="blur" />
                       </Link>
                       {/* <ul className="property-feature">
                         <li>
@@ -131,12 +131,18 @@ const New = () => {
 
                       <div className="left">
                         <h3 className="title">
-                         <Link 
-                           to={`/properties_detail?slug=${PostUrl}`} 
-                           onClick={() => window.location.href = `/properties_detail?slug=${PostUrl}`}
-                         >{PostTitle}</Link>
+                          <Link
+                            to={`/properties_detail?slug=${PostUrl}`}
+                            onClick={() => window.location.href = `/properties_detail?slug=${PostUrl}`}
+                          >{PostTitle}</Link>
                         </h3>
-                       
+
+                        
+                        <span className="location" style={{fontWeight:"600"}}>
+                          Plot Area: {Area || " not available"}
+                        </span>
+                      
+
                       </div>
 
                       <div className="right">
@@ -145,14 +151,15 @@ const New = () => {
                           <span className="type">{CategoryName}</span>
                         </div>
                       </div>
-                     
-                      </div>
-                        <hr />
 
 
-                        <div className="content">
-                    <div className="left">
-                      <span className="location">
+                    </div>
+                    <hr />
+
+
+                    <div className="content">
+                      <div className="left">
+                        <span className="location">
                           <img src="assets/images/icons/marker.png" alt="" />
                           {Location || "Location not available"}
                         </span>
