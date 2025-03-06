@@ -80,7 +80,7 @@ const Search = () => {
                   </Link>
                 </div>
                 <div className="search-item">
-                  <Link to={`/search-detail?searchLocation=apartments`}>
+                  <Link to={`/search-detail?searchLocation=Apartments `}>
                     <img src="assets/images/icons/apartment.png" alt="Apartments" />
                     <h4>Apartments</h4>
                   </Link>
@@ -92,9 +92,9 @@ const Search = () => {
                   </Link>
                 </div>
                 <div className="search-item">
-                  <Link to={`/search-detail?searchLocation=bungalows`}>
-                    <img src="assets/images/icons/country-house.png" alt="Bungalows" />
-                    <h4>Bungalows</h4>
+                  <Link to={`/search-detail?searchLocation=bungalow`}>
+                    <img src="assets/images/icons/country-house.png" alt="Bungalow" />
+                    <h4>Bungalow</h4>
                   </Link>
                 </div>
               </form>

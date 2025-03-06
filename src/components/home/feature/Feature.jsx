@@ -63,15 +63,38 @@ const Feature = () => {
                 featuredData.slice(0, 25).map((property) => {
                   const { PostUrl, PostTitle, CategoryName, Location, Price, PostImagePath, Area, BHK, Road, LandType } = property;
                   return (
-                    <div key={PostUrl} className="property-item col">
-                      <div 
-  className="property-inner" 
-  style={{
-    border: "2px solid #ccc",
-    boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)",
-    borderRadius:"10px"
-  }}
->
+                    <div key={PostUrl} className="property-item col-lg-4 col-md-6 col-12 mb-40">
+                   <div
+    className="property-inner"
+    style={{
+      border: "2px solid #ccc",
+      boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)",
+      borderRadius: "10px",
+      minHeight: "80vh", 
+      height: "85vh",
+      // display: "flex",
+      // flexDirection: "column",
+      // justifyContent: "space-between",
+    }}
+  >
+    <style>
+      {`
+        @media (max-width: 1024px) {
+          .property-inner {
+            min-height: 100%;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .property-inner {
+            min-height: 100%;
+          }
+        }
+
+       
+        }
+      `}
+    </style>
                         <div className="image">
                           <Link 
                             to={`/properties_detail?slug=${PostUrl}`} 

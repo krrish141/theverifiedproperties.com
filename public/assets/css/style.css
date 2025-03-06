@@ -2463,7 +2463,7 @@ header.header.is-sticky {
 
 
 .property-item .property-inner .content .left .title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   margin-bottom: 13px;
 }
@@ -2515,7 +2515,7 @@ header.header.is-sticky {
 }
 
 .property-item .property-inner .content .right .type-wrap .price {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1;
   display: -webkit-box;
@@ -5832,7 +5832,7 @@ div#goog-gt- {
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     scrollbar-width: none; /* Hides scrollbar */
   }
 
